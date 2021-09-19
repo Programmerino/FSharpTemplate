@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETCoreApp,Version=v5.0": {
+      "FSharp.Core": {
+        "type": "Direct",
+        "requested": "[5.0.0, )",
+        "resolved": "5.0.0",
+        "contentHash": "iHoYXA0VaSQUONGENB1aVafjDDZDZpwu39MtaRCTrmwFW/cTcK0b2yKNVYneFHJMc3ChtsSoM9lNtJ1dYXkHfA=="
+      },
+      "Microsoft.DotNet.ILCompiler.LLVM": {
+        "type": "Direct",
+        "requested": "[6.0.0-preview.2.21171.2, )",
+        "resolved": "6.0.0-preview.2.21171.2",
+        "contentHash": "tAGlW5/3iuiu/2fH1qbTzJaqAkXa3FsTosUB3DQSAR4AF7HZYrbqOld9lsSoiz9btgXu7TNpgfZvFA2iyiOYiA=="
+      }
+    },
+    ".NETCoreApp,Version=v5.0/linux-x64": {
+      "Microsoft.DotNet.ILCompiler.LLVM": {
+        "type": "Direct",
+        "requested": "[6.0.0-preview.2.21171.2, )",
+        "resolved": "6.0.0-preview.2.21171.2",
+        "contentHash": "tAGlW5/3iuiu/2fH1qbTzJaqAkXa3FsTosUB3DQSAR4AF7HZYrbqOld9lsSoiz9btgXu7TNpgfZvFA2iyiOYiA==",
+        "dependencies": {
+          "runtime.linux-x64.Microsoft.DotNet.ILCompiler.LLVM": "6.0.0-preview.2.21171.2"
+        }
+      },
+      "runtime.linux-x64.Microsoft.DotNet.ILCompiler.LLVM": {
+        "type": "Transitive",
+        "resolved": "6.0.0-preview.2.21171.2",
+        "contentHash": "vRUVjU23G37z4TnL0sPgD18i0xuPO0XbTKdo02Ctpcl4z0FW5TNrI4a6nkxbRoUGMO1sFIaVYre3GEl5wMm0Hw=="
+      }
+    }
+  }
+}
