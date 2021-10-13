@@ -6,7 +6,7 @@
 # .NET Core build folders
 bin/
 obj/
-/result/
+result/
 
 # Common node modules locations
 /node_modules
@@ -355,7 +355,6 @@ PublishScripts/
 *.nuget.targets
 
 # Nuget personal access tokens and Credentials
-nuget.config
 
 # Microsoft Azure Build Output
 csx/

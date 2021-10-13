@@ -5,7 +5,8 @@
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  inputs.dotnet.url = "github:Programmerino/dotnet-nix";
+  inputs.dotnet.url = "/home/davis/Documents/Personal/CSProjects/dotnet-nix";
+  #inputs.dotnet.url = "github:Programmerino/dotnet-nix";
 
   outputs = { self, nixpkgs, flake-utils, dotnet }:
     flake-utils.lib.eachSystem(["x86_64-linux" "aarch64-linux"]) (system:
@@ -30,17 +31,14 @@
               inherit sdk;
               inherit system;
               src = ./.;
+              lockFile = ./packages.lock.json;
+              configFile =./nuget.config;
 
               nativeBuildInputs = [
                 pkgs.clang_12
-                pkgs.lttng-ust.out
-                pkgs.gcc-unwrapped.lib
-                pkgs.zlib.out
-                pkgs.libkrb5.out
-                pkgs.tlf.out
               ];
 
-              nugetSha256 = "sha256-cDAIZvRGVS+QoTub+XWAT9OwRaokMXSMFEJaIkJ2lHQ=";
+              nugetSha256 = "sha256-jbpqNxPKIxtVaArWZ3DXO9hLMSa6PDqDnToFbTCr+Y0=";
           };
       }
     );

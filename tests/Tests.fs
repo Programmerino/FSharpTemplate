@@ -7,4 +7,5 @@ open Hedgehog.Xunit
 open Program
 
 [<Property>]
-let ``myId works for all values`` (xs: string) = myId xs = xs
+let ``Random numbers are the same`` (x: decimal) (a: decimal) (b: decimal) (c: decimal) =
+    x + a = b + c
