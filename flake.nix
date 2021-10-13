@@ -5,8 +5,7 @@
 
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
-  inputs.dotnet.url = "/home/davis/Documents/Personal/CSProjects/dotnet-nix";
-  #inputs.dotnet.url = "github:Programmerino/dotnet-nix";
+  inputs.dotnet.url = "github:Programmerino/dotnet-nix";
 
   outputs = { self, nixpkgs, flake-utils, dotnet }:
     flake-utils.lib.eachSystem(["x86_64-linux" "aarch64-linux"]) (system:
