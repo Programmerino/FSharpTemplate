@@ -18,7 +18,7 @@ jobs:
           name: mycache
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix-shell -p pkgs.dotnetCorePackages.sdk_5_0 --run "dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/Programmerino/index.json""
+      - run: nix-shell --run "dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github \"https://nuget.pkg.github.com/Programmerino/index.json\""
       - run: nix build .#nuget
       - run: echo "nupkgFile=./result-nuget/$(ls ./result-nuget | head -n 1)" >> $GITHUB_ENV
-      - run: nix-shell -p pkgs.dotnetCorePackages.sdk_5_0 --run "dotnet nuget push \"${{ env.nupkgFile }}\"  --api-key ${{ secrets.GITHUB_TOKEN }} --source \"github\""
+      - run: nix-shell --run "dotnet nuget push \"${{ env.nupkgFile }}\"  --api-key ${{ secrets.GITHUB_TOKEN }} --source \"github\""
