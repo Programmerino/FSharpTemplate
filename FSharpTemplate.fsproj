@@ -31,7 +31,7 @@
     <Company>Davis Davalos-DeLosh</Company>
     <PackageDescription>...</PackageDescription>
     <RepositoryUrl Condition="'$(name)' == ''">https://github.com/Programmerino/FSharpTemplate</RepositoryUrl>
-    <RepositoryUrl Condition="'$(name)' != ''">https://github.com/Programmerino/${name}</RepositoryUrl>
+    <RepositoryUrl Condition="'$(name)' != ''">https://github.com/Programmerino/$(name)</RepositoryUrl>
 
 </PropertyGroup>
 
