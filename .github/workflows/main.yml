@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.9.7
+        uses: gittools/actions/gitversion/setup@v0.9.10
         with:
           versionSpec: '5.x'
           includePrerelease: true
@@ -22,9 +22,13 @@ jobs:
         with:
           name: programmerino
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
       - name: Determine Version
         id:   gitversion
-        uses: gittools/actions/gitversion/execute@v0.9.7
+        uses: gittools/actions/gitversion/execute@v0.9.10
       - run: nix-shell --run "dotnet nuget add source --username Programmerino --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github \"https://nuget.pkg.github.com/Programmerino/index.json\""
       - run: nix build .#nuget -L
       - run: echo "nupkgFile=./result-nuget/$(ls ./result-nuget | head -n 1)" >> $GITHUB_ENV
