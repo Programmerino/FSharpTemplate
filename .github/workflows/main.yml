@@ -2,7 +2,7 @@ name: "Package"
 on:
   push:
 jobs:
-  tests:
+  package:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2.3.4
@@ -15,8 +15,7 @@ jobs:
             access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
       - uses: cachix/cachix-action@v10
         with:
-          name: mycache
-          signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
+          name: programmerino
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
       - run: nix-shell --run "dotnet nuget add source --username USERNAME --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github \"https://nuget.pkg.github.com/Programmerino/index.json\""
       - run: nix build .#nuget

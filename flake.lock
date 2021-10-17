@@ -6,14 +6,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1634098298,
-        "narHash": "sha256-4LIOSscAtegnyjIcD5IN5cMnMvNmWZ7eGu5PO6daqjQ=",
-        "type": "git",
-        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
+        "lastModified": 1634433267,
+        "narHash": "sha256-rs4po4y3Fo4CQAokGo2CtsJ1SW/TpuiBhGN3wo1NCj0=",
+        "owner": "Programmerino",
+        "repo": "dotnet-nix",
+        "rev": "08e84eaa9e2a8ce17cb8e67a75185c3821f207c4",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
+        "owner": "Programmerino",
+        "repo": "dotnet-nix",
+        "type": "github"
       }
     },
     "flake-utils": {
@@ -63,11 +66,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1634093230,
-        "narHash": "sha256-wmhNlu36f27llqo35fgMi1A+JttwCT6Nuq9tjG49sh4=",
+        "lastModified": 1634433315,
+        "narHash": "sha256-lzACQxUVQ/sAfYylaX8cFryu0r8GNesFCN1eHdkMbqQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "f2dde7b3ebe6d0c0989f382acf9eb0f46af16e85",
+        "rev": "32c831f7056cc22e335dd151fa127e37e6d6a30f",
         "type": "github"
       },
       "original": {
