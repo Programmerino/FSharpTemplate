@@ -23,14 +23,17 @@
     <UseSystemResourceKeys>true</UseSystemResourceKeys>
     <DebugSymbols>false</DebugSymbols>
     <NativeDebugSymbols>false</NativeDebugSymbols>
-    <PackageId>FSharpTemplate</PackageId>
-    <Version>0.0.1</Version>
+    <PackageId Condition="'$(name)' == ''">FSharpTemplate</PackageId>
+    <PackageId Condition="'$(name)' != ''">$(name)</PackageId>
+    <Version Condition="'$(version)' == ''">0.0.0</Version>
+    <Version Condition="'$(version)' != ''">$(version)</Version>
     <Authors>Davis Davalos-DeLosh</Authors>
     <Company>Davis Davalos-DeLosh</Company>
     <PackageDescription>...</PackageDescription>
-    <RepositoryUrl>https://github.com/Programmerino/FSharpTemplate</RepositoryUrl>
-    
-  </PropertyGroup>
+    <RepositoryUrl Condition="'$(name)' == ''">https://github.com/Programmerino/FSharpTemplate</RepositoryUrl>
+    <RepositoryUrl Condition="'$(name)' != ''">https://github.com/Programmerino/${name}</RepositoryUrl>
+
+</PropertyGroup>
 
   <Target Name="ConfigureTrimming"
           BeforeTargets="PrepareForILLink">
