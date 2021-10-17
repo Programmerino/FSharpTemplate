@@ -7,16 +7,13 @@
       },
       "locked": {
         "lastModified": 1634437413,
-        "narHash": "sha256-mVM7uoTKbs47YoWImWSxSOagqA71/V8S28L8GfnizL4=",
-        "owner": "Programmerino",
-        "repo": "dotnet-nix",
-        "rev": "2917fdb6001a10c3b0cdfe16575b163f46c05894",
-        "type": "github"
+        "narHash": "sha256-b15lYrn1QXWjn7xXb+nvfvsiLUKdyVKRQBfisSIihVQ=",
+        "type": "git",
+        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
       },
       "original": {
-        "owner": "Programmerino",
-        "repo": "dotnet-nix",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
       }
     },
     "flake-utils": {

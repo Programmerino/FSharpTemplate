@@ -18,11 +18,13 @@
         name = "FSharpTemplate";
         version = let _ver = builtins.getEnv "GITVERSION_NUGETVERSIONV2"; in if _ver == "" then "0.0.0" else "${_ver}.${builtins.getEnv "GITVERSION_COMMITSSINCEVERSIONSOURCE"}";
         sdk = pkgs.dotnetCorePackages.sdk_5_0;
+        library = false;
 
       in rec {
           devShell = pkgs.mkShell {
             inherit name;
             inherit version;
+            inherit library;
             DOTNET_CLI_HOME = "/tmp/dotnet_cli";
             buildInputs = defaultPackage.nativeBuildInputs ++ [sdk];
             DOTNET_ROOT = "${sdk}";
@@ -33,6 +35,7 @@
               inherit version;
               inherit sdk;
               inherit system;
+              inherit library;
               src = ./.;
               lockFile = ./packages.lock.json;
               configFile =./nuget.config;
@@ -43,8 +46,7 @@
 
               nugetSha256 = "sha256-ekLS3H4KcQw6PXrM/bpjB9fvLATTsvtu9wE2NhDcl2Y= ";
           };
-          
-          packages.nuget = defaultPackage.nuget;
+
       }
     );
 }
