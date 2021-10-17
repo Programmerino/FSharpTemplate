@@ -7,6 +7,8 @@
 bin/
 obj/
 result/
+result-nuget
+result-nuget/
 result
 
 # Common node modules locations
