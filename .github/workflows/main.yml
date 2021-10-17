@@ -30,6 +30,6 @@ jobs:
         id:   gitversion
         uses: gittools/actions/gitversion/execute@v0.9.10
       - run: nix-shell --run "dotnet nuget add source --username Programmerino --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github \"https://nuget.pkg.github.com/Programmerino/index.json\""
-      - run: nix build .#nuget -L
+      - run: nix build --impure .#nuget -L
       - run: echo "nupkgFile=./result-nuget/$(ls ./result-nuget | head -n 1)" >> $GITHUB_ENV
       - run: nix-shell --run "dotnet nuget push \"${{ env.nupkgFile }}\"  --api-key ${{ secrets.GITHUB_TOKEN }} --source \"github\""

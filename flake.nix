@@ -16,7 +16,7 @@
           inherit system;
         };
         name = "FSharpTemplate";
-        version = let _ver = builtins.getEnv "GITVERSION_NUGETVERSIONV2"; in if _ver == "" then "0.0.0" else "_ver";
+        version = let _ver = builtins.getEnv "GITVERSION_NUGETVERSIONV2"; in if _ver == "" then "0.0.0" else "${_ver}.${builtins.getEnv "GITVERSION_COMMITSSINCEVERSIONSOURCE"}";
         sdk = pkgs.dotnetCorePackages.sdk_5_0;
 
       in rec {
