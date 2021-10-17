@@ -6,14 +6,17 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1634437413,
+        "lastModified": 1634444819,
         "narHash": "sha256-b15lYrn1QXWjn7xXb+nvfvsiLUKdyVKRQBfisSIihVQ=",
-        "type": "git",
-        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
+        "owner": "Programmerino",
+        "repo": "dotnet-nix",
+        "rev": "9b55c292bf038619ee8e412ef7305ba2d8d6c611",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
+        "owner": "Programmerino",
+        "repo": "dotnet-nix",
+        "type": "github"
       }
     },
     "flake-utils": {
