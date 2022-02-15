@@ -1,10 +1,8 @@
-// Learn more about F# at http://docs.microsoft.com/dotnet/fsharp
-open System
-
-let myId x = x
+open FSharpPlus
+open FSharp.Data
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World!"
+    [ 1 .. 13 ] |> listGen |> printfn "%A"
 
     0 // return an integer exit code
