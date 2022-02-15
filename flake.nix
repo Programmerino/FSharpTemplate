@@ -16,7 +16,7 @@
         };
         name = "FSharpTemplate";
         version = let _ver = builtins.getEnv "GITVERSION_NUGETVERSIONV2"; in if _ver == "" then "0.0.0" else "${_ver}.${builtins.getEnv "GITVERSION_COMMITSSINCEVERSIONSOURCE"}";
-        sdk = pkgs.dotnetCorePackages.sdk_5_0;
+        sdk = pkgs.dotnet-sdk;
         library = false;
 
       in rec {
@@ -43,7 +43,7 @@
                 pkgs.clang_12
               ];
 
-              nugetSha256 = "sha256-ekLS3H4KcQw6PXrM/bpjB9fvLATTsvtu9wE2NhDcl2Y= ";
+              nugetSha256 = "sha256-zKbuxLstps4WrpAr5EHcOVs4VhB0wAActlK6FDvLU90=";
           };
 
       }

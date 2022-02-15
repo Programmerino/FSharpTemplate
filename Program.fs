@@ -1,8 +1,9 @@
 open FSharpPlus
 open FSharp.Data
+open System
 
 [<EntryPoint>]
 let main argv =
-    [ 1 .. 13 ] |> listGen |> printfn "%A"
+    Console.WriteLine "Hello world!"
 
     0 // return an integer exit code
