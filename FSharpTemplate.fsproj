@@ -36,7 +36,7 @@
     <PackageDescription>...</PackageDescription>
     <RepositoryUrl Condition="'$(name)' == ''">https://github.com/Programmerino/FSharpTemplate</RepositoryUrl>
     <RepositoryUrl Condition="'$(name)' != ''">https://github.com/Programmerino/$(name)</RepositoryUrl>
-
+    <TrimmerDefaultAction>link</TrimmerDefaultAction>
 </PropertyGroup>
 
   <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
@@ -54,7 +54,7 @@
     <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Disabled.DoNotThrowForAttributes" Value="true" />
     <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Assembly.SimulatedCallingAssembly" Value="true" />
     <PackageReference Include="FSharp.Core" Version="5.0.0" />
-    <PackageReference Include="Microsoft.DotNet.ILCompiler.LLVM" Version="6.0.0-preview.2.21171.2" />
+    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-preview.3.22118.2" />
     <PackageReference Include="FSharpPlus" Version="1.2.2" />
     <PackageReference Include="FSharp.Data" Version="4.2.7" />
     <Compile Include="Program.fs" />
