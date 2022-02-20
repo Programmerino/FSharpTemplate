@@ -49,6 +49,7 @@
   </Target>
 
   <ItemGroup>
+    <PackageReference Include="Helpers" Version="0.1.0.2" />
     <RdXmlFile Include="FSharp.Core.xml" />
     <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Disabled.DoNotThrowForNames" Value="true" />
     <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Disabled.DoNotThrowForAssembly" Value="true" />
