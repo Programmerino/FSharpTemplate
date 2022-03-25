@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1634444819,
-        "narHash": "sha256-b15lYrn1QXWjn7xXb+nvfvsiLUKdyVKRQBfisSIihVQ=",
+        "lastModified": 1645224515,
+        "narHash": "sha256-h8JcE8oo/7rlZQ3zPYAI4yZXLJSecByl8VM+3mNAfUk=",
         "owner": "Programmerino",
         "repo": "dotnet-nix",
-        "rev": "9b55c292bf038619ee8e412ef7305ba2d8d6c611",
+        "rev": "308d33267e5aaada95ca2f2ed5aae97f1be2566e",
         "type": "github"
       },
       "original": {
@@ -66,11 +66,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1644962544,
-        "narHash": "sha256-IQzuBoViAMcZCUOcWsIzEQZ5vGVwC0P36RYqgVU8w6I=",
+        "lastModified": 1648162330,
+        "narHash": "sha256-8hD6lFayU57Psd7Z7KZtOVskeXSUBZrMxquu/7PBbvI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ed9c8d388e818858102b8956ee140a4cc18bb3b3",
+        "rev": "6a74aa0a1372c93571ce3c0ce4e23daf05df019e",
         "type": "github"
       },
       "original": {
