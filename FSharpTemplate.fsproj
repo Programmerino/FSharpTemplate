@@ -50,15 +50,16 @@
 
   <ItemGroup>
     <PackageReference Include="Helpers" Version="0.1.0.2" />
-    <RdXmlFile Include="FSharp.Core.xml" />
-    <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Disabled.DoNotThrowForNames" Value="true" />
-    <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Disabled.DoNotThrowForAssembly" Value="true" />
-    <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Disabled.DoNotThrowForAttributes" Value="true" />
-    <RuntimeHostConfigurationOption Include="Switch.System.Reflection.Assembly.SimulatedCallingAssembly" Value="true" />
-    <PackageReference Include="FSharp.Core" Version="5.0.0" />
-    <PackageReference Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-preview.3.22118.2" />
+    <RdXmlFile Condition="'$(useFable)' == '0'" Include="FSharp.Core.xml" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Disabled.DoNotThrowForNames" Value="true" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Disabled.DoNotThrowForAssembly" Value="true" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Disabled.DoNotThrowForAttributes" Value="true" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Assembly.SimulatedCallingAssembly" Value="true" />
+    <PackageReference Include="FSharp.Core" Version="6.0.2" />
+    <PackageReference Condition="'$(useFable)' == '0'" Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-preview.3.22118.2" />
     <PackageReference Include="FSharpPlus" Version="1.2.2" />
     <PackageReference Include="FSharp.Data" Version="4.2.7" />
+    <Content Condition="'$(useFable)' == '1'" Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 </Project>
