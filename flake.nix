@@ -25,8 +25,14 @@
             inherit version;
             inherit library;
             DOTNET_CLI_HOME = "/tmp/dotnet_cli";
-            buildInputs = defaultPackage.nativeBuildInputs ++ [sdk];
-            DOTNET_ROOT = "${sdk}";
+            DOTNET_CLI_TELEMTRY_OPTOUT=1;
+            CLR_OPENSSL_VERSION_OVERRIDE=1.1;
+            DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1;
+            DONTET_ROOT = "${sdk}";
+            buildInputs = defaultPackage.nativeBuildInputs ++ [ pkgs.starship sdk ];
+            shellHook = ''
+              eval "$(starship init bash)"
+            '';
           };
     
           defaultPackage = dotnet.buildDotNetProject.${system} rec {
