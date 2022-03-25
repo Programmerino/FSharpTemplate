@@ -7,4 +7,4 @@ This project uses Nix (you will need to enable flakes) and you can accelerate bu
 cachix use programmerino
 ```
 
-and ultimately build with `nix build` which will place a binary in `result` or `nix build .#nuget` which will place a binary in `result-nuget`
+and ultimately build with `nix build` which will place a binary/library in `result`
