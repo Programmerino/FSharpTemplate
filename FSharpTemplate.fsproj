@@ -12,7 +12,7 @@
     <PublishReadyToRun>true</PublishReadyToRun>
     <TrimMode>link</TrimMode>
     <IlcGenerateStackTraceData>false</IlcGenerateStackTraceData>
-    <IlcDisableReflection>false</IlcDisableReflection>
+    <IlcDisableReflection>true</IlcDisableReflection>
     <IlcOptimizationPreference>Speed</IlcOptimizationPreference>
     <IlcFoldIdenticalMethodBodies>true</IlcFoldIdenticalMethodBodies>
     <AutoreleasePoolSupport>false</AutoreleasePoolSupport>
@@ -24,8 +24,17 @@
     <MetadataUpdaterSupport>false</MetadataUpdaterSupport>
     <UseNativeHttpHandler>true</UseNativeHttpHandler>
     <UseSystemResourceKeys>true</UseSystemResourceKeys>
+    <CustomResourceTypesSupport>false</CustomResourceTypesSupport>
+    <EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization>false</EnableUnsafeBinaryFormatterInDesigntimeLicenseContextSerialization>
+    <BuiltInComInteropSupport>false</BuiltInComInteropSupport>
+    <EnableCppCLIHostActivation>false</EnableCppCLIHostActivation>
+    <_EnableConsumingManagedCodeFromNativeHosting>false</_EnableConsumingManagedCodeFromNativeHosting>
+    <NullabilityInfoContextSupport>false</NullabilityInfoContextSupport>
+    <_AggressiveAttributeTrimming>true</_AggressiveAttributeTrimming>
     <DebugSymbols>false</DebugSymbols>
     <NativeDebugSymbols>false</NativeDebugSymbols>
+    <TrimmerRemoveSymbols>true</TrimmerRemoveSymbols>
+    <TrimmerDefaultAction>link</TrimmerDefaultAction>
     <ErrorOnDuplicatePublishOutputFiles>false</ErrorOnDuplicatePublishOutputFiles>
     <PackageId Condition="'$(name)' == ''">FSharpTemplate</PackageId>
     <PackageId Condition="'$(name)' != ''">$(name)</PackageId>
@@ -36,7 +45,6 @@
     <PackageDescription>...</PackageDescription>
     <RepositoryUrl Condition="'$(name)' == ''">https://github.com/Programmerino/FSharpTemplate</RepositoryUrl>
     <RepositoryUrl Condition="'$(name)' != ''">https://github.com/Programmerino/$(name)</RepositoryUrl>
-    <TrimmerDefaultAction>link</TrimmerDefaultAction>
 </PropertyGroup>
 
   <Target Name="ConfigureTrimming" BeforeTargets="PrepareForILLink">
@@ -50,13 +58,13 @@
 
   <ItemGroup>
     <PackageReference Include="Helpers" Version="0.1.0.2" />
-    <RdXmlFile Condition="'$(useFable)' == '0'" Include="FSharp.Core.xml" />
-    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Disabled.DoNotThrowForNames" Value="true" />
-    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Disabled.DoNotThrowForAssembly" Value="true" />
-    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Disabled.DoNotThrowForAttributes" Value="true" />
-    <RuntimeHostConfigurationOption Condition="'$(useFable)' == '0'" Include="Switch.System.Reflection.Assembly.SimulatedCallingAssembly" Value="true" />
+    <RdXmlFile Condition="'$(useFable)' != '1'" Include="FSharp.Core.xml" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' != '1'" Include="Switch.System.Reflection.Disabled.DoNotThrowForNames" Value="true" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' != '1'" Include="Switch.System.Reflection.Disabled.DoNotThrowForAssembly" Value="true" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' != '1'" Include="Switch.System.Reflection.Disabled.DoNotThrowForAttributes" Value="true" />
+    <RuntimeHostConfigurationOption Condition="'$(useFable)' != '1'" Include="Switch.System.Reflection.Assembly.SimulatedCallingAssembly" Value="true" />
     <PackageReference Include="FSharp.Core" Version="6.0.2" />
-    <PackageReference Condition="'$(useFable)' == '0'" Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-preview.3.22118.2" />
+    <PackageReference Condition="'$(useFable)' != '1'" Include="Microsoft.DotNet.ILCompiler" Version="7.0.0-preview.4.22180.1" />
     <PackageReference Include="FSharpPlus" Version="1.2.2" />
     <PackageReference Include="FSharp.Data" Version="4.2.7" />
     <Content Condition="'$(useFable)' == '1'" Include="*.fsproj; **\*.fs; **\*.fsi" PackagePath="fable\" />

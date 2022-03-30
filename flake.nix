@@ -49,7 +49,7 @@
                 pkgs.clang_12
               ];
 
-              nugetSha256 = "sha256-leR3/70r3CKKXMBtYIc49rM4/BqIR+nU9FzIgc8UR/Q=";
+              nugetSha256 = "sha256-CtuUeAdLEMkB8FnRVUlPMLzliynYtJjIP4V49j+IQrA=";
           };
 
       }
