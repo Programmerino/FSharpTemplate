@@ -29,12 +29,15 @@
       "locked": {
         "lastModified": 1648671993,
         "narHash": "sha256-xb1EdOqgDSzuFDntQCk7tZBfjnncSevCs7d65fc61FY=",
-        "type": "git",
-        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
+        "owner": "Programmerino",
+        "repo": "dotnet-nix",
+        "rev": "ed6e98973c15cb1a072b7bb2921e9a1af95ee342",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/davis/Documents/Personal/CSProjects/dotnet-nix"
+        "owner": "Programmerino",
+        "repo": "dotnet-nix",
+        "type": "github"
       }
     },
     "fable": {

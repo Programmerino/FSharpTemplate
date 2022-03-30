@@ -1,3 +1,5 @@
+module FSharpTemplate
+
 open FSharpPlus
 open FSharp.Data
 open System
