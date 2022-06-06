@@ -48,7 +48,7 @@
             DOTNET_CLI_TELEMTRY_OPTOUT=1;
             CLR_OPENSSL_VERSION_OVERRIDE=1.1;
             DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1;
-            DONTET_ROOT = "${sdk}";
+            DOTNET_ROOT = "${sdk}";
             buildInputs = defaultPackage.nativeBuildInputs ++ [ pkgs.starship sdk pkgs.git ];
             shellHook = ''
               eval "$(starship init bash)"
